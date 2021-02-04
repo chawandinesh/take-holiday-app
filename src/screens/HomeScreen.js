@@ -6,14 +6,15 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
+import {Icon} from 'react-native-elements';
 
 const {height, width} = Dimensions.get('window');
-export function HomeScreen() {
+export function HomeScreen({navigation}) {
   return (
     <ImageBackground
-      source={require('../assets/holiday2.jpg')}
+      source={require('../assets/holiday1.png')}
       style={{height, width, flex: 1}}>
-    <View
+      <View
         style={{
           width: width,
           height: height * 0.3,
@@ -42,33 +43,81 @@ export function HomeScreen() {
           </Text>
         </TouchableOpacity>
       </View>
-      <View style={{width, height: height * 0.3, justifyContent:'center', alignItems:'center'}}>
-          <View style={{height:height * 0.15, justifyContent:'flex-end'}}>
-              <TouchableOpacity activeOpacity={0.7} style={{backgroundColor:'#fff', paddingHorizontal: height * 0.05, paddingVertical: height * 0.02, borderRadius: height * 0.02}}>
-                  <Text style={{fontSize: height * 0.03}}>Add Holiday</Text>
-              </TouchableOpacity>
-          </View>
-          <View style={{height:height * 0.15, justifyContent:'center'}}>
-              <TouchableOpacity  activeOpacity={0.7} style={{backgroundColor:'#fff', paddingHorizontal: height * 0.05, paddingVertical: height * 0.02, borderRadius: height * 0.02}}>
-                  <Text style={{fontSize: height * 0.03}}>View Holiday</Text>
-              </TouchableOpacity>
-          </View>
+      <View
+        style={{
+          width,
+          height: height * 0.3,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <View style={{height: height * 0.15, justifyContent: 'flex-end'}}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('CategoriesScreen')}
+            activeOpacity={0.7}
+            style={{
+              backgroundColor: '#fff',
+              paddingHorizontal: height * 0.05,
+              paddingVertical: height * 0.02,
+              borderRadius: height * 0.02,
+              borderBottomWidth: 2,
+              borderRightWidth: 1,
+              borderLeftWidth: 1,
+            }}>
+            <Text style={{fontSize: height * 0.03, fontWeight: 'bold'}}>
+              Add Holiday
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{height: height * 0.15, justifyContent: 'center'}}>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={{
+              backgroundColor: '#fff',
+              paddingHorizontal: height * 0.05,
+              paddingVertical: height * 0.02,
+              borderRadius: height * 0.02,
+              borderBottomWidth: 2,
+              borderRightWidth: 1,
+              borderLeftWidth: 1,
+            }}>
+            <Text style={{fontSize: height * 0.03, fontWeight: 'bold'}}>
+              View Holiday
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={{height: height * 0.4, backgroundColor:'green', alignItems:'flex-end', flexDirection:'row', justifyContent:'space-between'}}>
-          <View style={{margin: 10}}>
-              <TouchableOpacity>
-                  <Text style={{fontSize: height * 0.02}}>Rate App</Text>
-              </TouchableOpacity>
-          </View>
-          <View style={{margin: 10}}>
-              <TouchableOpacity>
-                  <Text style={{fontSize: height * 0.02}}>Rate App</Text>
-              </TouchableOpacity>
-          </View>
-
+      <View
+        style={{
+          height: height * 0.4,
+          alignItems: 'flex-end',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <View style={{margin: 10}}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#ffe',
+              padding: height * 0.02,
+              borderWidth: 1,
+              borderRadius: height * 0.02,
+            }}>
+            <Icon name="star-rate" type="material-icon" />
+            <Text style={{fontSize: height * 0.02}}>Rate App</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{margin: 10}}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#ffe',
+              padding: height * 0.02,
+              borderWidth: 1,
+              borderRadius: height * 0.02,
+            }}>
+            <Icon name="ios-information-circle" type="ionicon" />
+            <Text style={{fontSize: height * 0.02}}>About Us</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-
-       
     </ImageBackground>
   );
 }

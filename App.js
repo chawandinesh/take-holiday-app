@@ -7,20 +7,24 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-} from 'react-native';
-import {HomeScreen} from './src/screens'
+import {SafeAreaView, StatusBar} from 'react-native';
+import {HomeScreen, CategoriesScreen, AddDetails, Details} from './src/screens';
+import Navigator from './src/routes/navigation';
+// import {TakeHolidayContext} from './src/screens/context'
+import Context from './src/screens/context';
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
+    <Context>
+      {/* <StatusBar barStyle="light-content" /> */}
       {/* <SafeAreaView> */}
-        <HomeScreen/>
+      {/* <HomeScreen/> */}
+      {/* <CategoriesScreen/> */}
+      {/* <AddDetails/> */}
+      {/* <Details/> */}
+      <Navigator />
       {/* </SafeAreaView> */}
-    </>
+    </Context>
   );
 };
 
