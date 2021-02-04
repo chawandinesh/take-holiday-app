@@ -92,9 +92,9 @@ export function HomeScreen({navigation}) {
           height: height * 0.4,
           alignItems: 'flex-end',
           flexDirection: 'row',
-          justifyContent: 'flex-end',
+          justifyContent: 'space-between',
         }}>
-        {/* <View style={{margin: 10}}>
+         <View style={{margin: 10}}>
           <TouchableOpacity
             style={{
               backgroundColor: '#ffe',
@@ -105,7 +105,7 @@ export function HomeScreen({navigation}) {
             <Icon name="star-rate" type="material-icon" />
             <Text style={{fontSize: height * 0.02}}>Rate App</Text>
           </TouchableOpacity>
-        </View> */}
+        </View> 
         <View style={{margin: 10}}>
           <TouchableOpacity
             onPress={() => navigation.navigate('AboutUs')}

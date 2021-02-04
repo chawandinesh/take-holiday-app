@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
   ImageBackground,
+  SafeAreaView
 } from 'react-native';
 import {Icon} from 'react-native-elements';
 import {TakeHolidayContext} from '../screens/context';
@@ -15,6 +16,7 @@ const {height, width} = Dimensions.get('window');
 
 export function AboutUs({navigation}) {
   return (
+    <SafeAreaView>
     <ImageBackground blurRadius={1} source={require('../assets/holiday5.jpg')} style={{width, height}}>
       <View
         style={{
@@ -108,5 +110,6 @@ export function AboutUs({navigation}) {
         </View>
       </View>
     </ImageBackground>
+    </SafeAreaView>
   );
 }

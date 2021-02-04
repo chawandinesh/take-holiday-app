@@ -4,6 +4,7 @@ import {
   Text,
   Dimensions,
   TouchableOpacityBase,
+  SafeAreaView,
   Image,
   TouchableOpacity,
   FlatList,
@@ -57,7 +58,7 @@ export function CategoriesScreen({navigation}) {
     </TouchableOpacity>
   );
   return (
-    <View style={{width, height}}>
+    <SafeAreaView style={{width, height}}>
       <View
         style={{
           justifyContent: 'space-between',
@@ -104,6 +105,6 @@ export function CategoriesScreen({navigation}) {
           renderItem={renderItem}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  SafeAreaView,
   ImageBackground,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
@@ -170,6 +171,7 @@ export function Details({navigation, route}) {
   };
 
   return (
+    <SafeAreaView>
     <ImageBackground style={{width, height}} blurRadius={1} source={require('../assets/holiday6.jpg')}>
       <View
         style={{
@@ -246,5 +248,6 @@ export function Details({navigation, route}) {
         )}
       </View>
     </ImageBackground>
+    </SafeAreaView>
   );
 }

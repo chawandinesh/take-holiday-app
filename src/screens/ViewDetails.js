@@ -6,6 +6,7 @@ import {
   TouchableOpacityBase,
   Image,
   TouchableOpacity,
+  SafeAreaView,
   FlatList,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
@@ -171,6 +172,7 @@ export function ViewDetails({navigation}) {
     );
   };
   return (
+    <SafeAreaView>
     <View style={{width, height}}>
       <View
         style={{
@@ -241,5 +243,6 @@ export function ViewDetails({navigation}) {
           }
       </View>
     </View>
+    </SafeAreaView>
   );
 }
