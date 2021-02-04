@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   TextInput,
+  ImageBackground,
   FlatList,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -59,6 +60,7 @@ export function AddDetails({navigation, route}) {
   };
   return (
     <SafeAreaView>
+      <ImageBackground style={{width,height}} source={require('../assets/holiday4.jpg')}>
       <KeyboardAwareScrollView style={{width, height}}>
         <View
           style={{
@@ -105,7 +107,7 @@ export function AddDetails({navigation, route}) {
 
         <View
           style={{
-            backgroundColor: '#f5fafa',
+           // backgroundColor: '#f5fafa',
             height: height * 0.9,
             width: width * 0.94,
             alignSelf: 'center',
@@ -115,6 +117,7 @@ export function AddDetails({navigation, route}) {
             <Text
               style={{
                 width: width * 0.2,
+               // height: height * 0.01,
                 backgroundColor: 'purple',
                 color: '#fff',
                 alignSelf: 'flex-end',
@@ -276,6 +279,8 @@ export function AddDetails({navigation, route}) {
               height: height * 0.1,
               flexDirection: 'row',
               justifyContent: 'space-between',
+              backgroundColor:'#fff',
+              padding: height * 0.02,
               alignItems: 'center',
             }}>
             <TouchableOpacity
@@ -337,6 +342,7 @@ export function AddDetails({navigation, route}) {
           </View>
         </View>
       </KeyboardAwareScrollView>
+      </ImageBackground>
     </SafeAreaView>
   );
 }
