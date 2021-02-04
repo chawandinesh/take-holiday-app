@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  ImageBackground,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
 import {TakeHolidayContext} from './context';
@@ -75,11 +76,6 @@ export function Details({navigation, route}) {
               {item.place}
             </Text>
           </View>
-          {/* <View style={{padding: height * 0.01}}>
-           <Icon name="trash" type="ionicon" color="darkred"/>
-       </View>
-          </View> */}
-
           <View
             style={{
               width: width * 0.75,
@@ -117,7 +113,7 @@ export function Details({navigation, route}) {
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <Text style={{fontWeight: 'bold'}}>DATE :</Text>
+            <Text style={{fontWeight: 'bold'}}></Text>
 
             <View style={{alignItems: 'center'}}>
               <View
@@ -174,7 +170,7 @@ export function Details({navigation, route}) {
   };
 
   return (
-    <View style={{width, height}}>
+    <ImageBackground style={{width, height}} blurRadius={1} source={require('../assets/holiday6.jpg')}>
       <View
         style={{
           justifyContent: 'space-between',
@@ -217,7 +213,7 @@ export function Details({navigation, route}) {
         style={{
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#f5fafa',
+          // backgroundColor: '#f5fafa',
           height: height * 0.9,
         }}>
         {state[details].length ? (
@@ -249,6 +245,6 @@ export function Details({navigation, route}) {
           </View>
         )}
       </View>
-    </View>
+    </ImageBackground>
   );
 }

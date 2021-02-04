@@ -17,7 +17,6 @@ export function ViewDetails({navigation}) {
   const [dataItems, setDataItems] = React.useState([]);
   const AllData = Object.values(state);
   const allKeys = Object.keys(state);
-  //   console.log(AllData.flat(),'state')
   let mArray = [];
   React.useEffect(() => {
     allKeys.map((key) => {
@@ -27,7 +26,6 @@ export function ViewDetails({navigation}) {
     });
     setDataItems(mArray);
   }, []);
-  console.log(dataItems, 'items');
 
   const renderItem = ({item, index}) => {
     return (
@@ -89,11 +87,6 @@ export function ViewDetails({navigation}) {
               {item.place}
             </Text>
           </View>
-          {/* <View style={{padding: height * 0.01}}>
-           <Icon name="trash" type="ionicon" color="darkred"/>
-       </View>
-          </View> */}
-
           <View
             style={{
               width: width * 0.75,
@@ -174,15 +167,6 @@ export function ViewDetails({navigation}) {
             </View>
           </View>
         </View>
-        {/* <TouchableOpacity
-          style={{
-            padding: height * 0.01,
-            width: width * 0.15,
-            justifyContent: 'center',
-          }}
-          onPress={(e) => handleDelete(index)}>
-          <Icon name="trash" type="ionicon" color="darkred" />
-        </TouchableOpacity> */}
       </View>
     );
   };
@@ -225,14 +209,36 @@ export function ViewDetails({navigation}) {
           alignItems: 'center',
           backgroundColor: '#f5fafa',
           height: height * 0.9,
-          //   width: width * 0.98
         }}>
-        {/* <Text style={{fontSize: height * 0.1}}>slfj</Text> */}
-        <FlatList
-          data={dataItems}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={renderItem}
-        />
+          {
+            dataItems.length ?
+
+            <FlatList
+              data={dataItems}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={renderItem}
+            />
+            :
+            <View
+            style={{
+              width: width * 0.8,
+              height: height * 0.2,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              borderTopRightRadius: height * 0.03,
+              borderBottomLeftRadius: height * 0.03,
+            }}>
+            <Text
+              style={{
+                color: '#fff',
+                fontSize: height * 0.03,
+                textAlign: 'center',
+              }}>
+              No Data Found , Please click on ' + ' to add data in category details page
+            </Text>
+          </View>
+          }
       </View>
     </View>
   );
