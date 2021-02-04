@@ -74,7 +74,7 @@ export function CategoriesScreen({navigation}) {
           />
         </TouchableOpacity>
         <View style={{justifyContent: 'center'}}>
-          <Text style={{color: '#fff', fontSize: height * 0.03}}>
+          <Text style={{color: '#fff', fontSize: height * 0.03, fontWeight:'bold'}}>
             Categories
           </Text>
         </View>

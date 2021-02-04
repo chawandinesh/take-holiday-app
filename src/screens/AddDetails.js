@@ -76,7 +76,7 @@ export function AddDetails({navigation, route}) {
           />
         </TouchableOpacity>
         <View style={{justifyContent: 'center'}}>
-          <Text style={{color: '#fff', fontSize: height * 0.03}}>
+          <Text style={{color: '#fff', fontSize: height * 0.03, fontWeight:'bold'}}>
             Add Details
           </Text>
         </View>

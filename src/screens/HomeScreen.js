@@ -70,6 +70,7 @@ export function HomeScreen({navigation}) {
         </View>
         <View style={{height: height * 0.15, justifyContent: 'center'}}>
           <TouchableOpacity
+            onPress={() => navigation.navigate('ViewDetails')}
             activeOpacity={0.7}
             style={{
               backgroundColor: '#fff',
